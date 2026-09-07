@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实验手册 · 小小接线生</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .exp { border-top: 10px solid var(--yellow); }
+  .exp .meta { margin-bottom: 8px; }
+  .guessbox { background: #fffcf3; border-radius: 12px; padding: 12px 14px; margin: 10px 0; }
+  .result-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+  .fail-table td:first-child { white-space: nowrap; font-weight: bold; }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="index.html">☎️ 小小接线生</a>
+  <div class="links">
+    <a href="plan.html">📅 六周计划</a>
+    <a href="story.html">📖 电话故事</a>
+    <a class="here" href="experiments.html">🧪 实验</a>
+    <a href="machine.html">🛠️ 做机器</a>
+    <a href="shopping.html">🛒 采购</a>
+    <a href="parents.html">👨‍👩‍👧 家长指南</a>
+    <a href="worksheets.html">🖨️ 练习单</a>
+    <a href="museum.html">🏛️ 小博物馆</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="pagehead">
+    <h1>🧪 实验手册（7 岁版）</h1>
+    <p>每个实验都走同一条路：<b>问 → 猜 → 试 → 看 → 讲</b>。失败也算数据，写下来。</p>
+  </div>
+
+  <div class="safety">
+    <h3>⛔ 每次开始前复述一遍</h3>
+    <ul>
+      <li>电池实验只用 AA 电池，不接墙上的电。</li>
+      <li>剪刀、锥子、剥线钳、热熔胶：家长用。</li>
+      <li>磁铁不放进口，用完收回盒子。旧电话不插墙插。</li>
+    </ul>
+  </div>
+
+  <!-- 实验 1 -->
+  <div class="card exp" id="exp1">
+    <h2>实验 1　米粒会跳舞吗？</h2>
+    <p class="meta"><span class="tag">第 1 周</span><span class="tag blue">10 分钟</span><span class="tag green">家里现有材料</span></p>
+    <p><b>材料</b>：纸杯、保鲜膜或薄塑料袋、橡皮筋、生米或盐、勺子</p>
+    <div class="guessbox">
+      <b>🤔 先猜一猜（点一个）：</b>在杯子旁边大声说话，米粒会……
+      <div class="guess">
+        <button class="guess-opt">一动不动</button>
+        <button class="guess-opt">轻轻跳</button>
+        <button class="guess-opt">跳得很凶</button>
+      </div>
+      <p class="guess-note">猜错了更值钱——那是孩子自己的发现时刻。</p>
+    </div>
+    <h3>做法（点步骤可以打勾）</h3>
+    <ol class="steps">
+      <li>用保鲜膜蒙住杯口，橡皮筋箍紧，当成鼓面。</li>
+      <li>在膜上放 8–10 粒米。</li>
+      <li>在杯子旁边（不要敲膜）大声说话、拍手，或用勺子轻敲杯身。</li>
+      <li>换轻声说话再试一次。</li>
+    </ol>
+    <p><b>👀 看到了什么</b>：米是否跳动？大声和轻声一样吗？</p>
+    <div class="tip"><b>可以怎么讲</b>：膜在振动，米被弹起来。声音越大，跳得越明显。</div>
+    <p><b>变量（可选）</b>：轻声 vs 大声；拍手 vs 说话。一次只换一个。</p>
+    <p>🖨️ 记录单：<a href="worksheets.html#w2">W2 米粒跳舞</a></p>
+  </div>
+
+  <!-- 实验 2 -->
+  <div class="card exp" id="exp2">
+    <h2>实验 2　喉咙里的小鼓</h2>
+    <p class="meta"><span class="tag">第 1 周</span><span class="tag blue">5 分钟</span><span class="tag green">零材料</span></p>
+    <div class="guessbox">
+      <b>🤔 先猜一猜：</b>哪种做法喉咙抖得最明显？
+      <div class="guess">
+        <button class="guess-opt">小声说话</button>
+        <button class="guess-opt">大声说话</button>
+        <button class="guess-opt">吹气不出声</button>
+        <button class="guess-opt">发「嗯——」</button>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>手指轻放喉咙。</li>
+      <li>分别做：小声说话、大声说话、吹气但不出声、发「嗯——」。</li>
+    </ol>
+    <p><b>👀 看到了什么</b>：不出声吹气时，喉咙几乎不抖；发声时会抖。</p>
+    <div class="tip"><b>可以怎么讲</b>：说话要用声带振动。电话要传送的，就是这种振动。</div>
+  </div>
+
+  <!-- 实验 3 -->
+  <div class="card exp" id="exp3">
+    <h2>实验 3　纸杯电话（本课题的第一个「机器」）</h2>
+    <p class="meta"><span class="tag">第 2 周</span><span class="tag blue">20 分钟</span><span class="tag green">家里现有材料</span></p>
+    <p><b>材料</b>：纸杯 2 个、棉线 / 钓鱼线 / 毛线各约 3–8 米、短吸管或牙签、贴纸</p>
+    <div class="guessbox">
+      <b>🤔 先猜一猜：</b>哪种线传声最清楚？
+      <div class="guess">
+        <button class="guess-opt">棉线</button>
+        <button class="guess-opt">钓鱼线</button>
+        <button class="guess-opt">毛线</button>
+      </div>
+      <b>🤔 再猜：</b>线放松了还能听见吗？
+      <div class="guess">
+        <button class="guess-opt">能听见</button>
+        <button class="guess-opt">听不见了</button>
+      </div>
+    </div>
+    <h3>做法（家长戳洞）</h3>
+    <ol class="steps">
+      <li>杯底中央戳小孔。</li>
+      <li>线从外向内穿过，杯内用吸管段或牙签挡住，打结。</li>
+      <li>两人把线<b>拉直</b>，一人对杯说话，一人罩住耳朵听。</li>
+      <li>对比：棉线 / 钓鱼线 / 毛线；拉紧 / 放松；中间捏住 / 不捏。</li>
+    </ol>
+    <div class="tip"><b>可以怎么讲</b>：杯底振动 → 线振动 → 另一只杯底振动 → 空气再振动 → 耳朵听见。</div>
+    <p><b>关键现象</b>：线松了，几乎听不见；中间捏住，振动被挡住。</p>
+    <div class="think">💡 小提示：室内走廊比室外风里更容易成功。线不要绕过尖锐墙角。</div>
+    <p>🖨️ 记录单：<a href="worksheets.html#w3">W3 纸杯电话实验记录</a></p>
+  </div>
+
+  <!-- 实验 4 -->
+  <div class="card exp" id="exp4">
+    <h2>实验 4　电变成磁</h2>
+    <p class="meta"><span class="tag">第 3 周</span><span class="tag blue">15 分钟</span><span class="tag red">需要采购：漆包线、磁铁、电池盒</span></p>
+    <p><b>材料</b>：大铁钉、漆包线约 2 米、AA 电池 2 节、电池盒、回形针、胶带</p>
+    <div class="guessbox">
+      <b>🤔 先猜一猜：</b>没有接电池，绕了线的铁钉能吸回形针吗？
+      <div class="guess">
+        <button class="guess-opt">能吸</button>
+        <button class="guess-opt">不能吸</button>
+      </div>
+      <b>🤔 接通电池以后呢？</b>
+      <div class="guess">
+        <button class="guess-opt">能吸</button>
+        <button class="guess-opt">不能吸</button>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>在铁钉上密绕漆包线 40–80 圈，两端各留 15 厘米。</li>
+      <li>（家长）砂纸或刀刮去线头绝缘漆，接到电池盒。</li>
+      <li>接通，看钉尖能否吸起回形针。断开，看回形针是否掉下。</li>
+    </ol>
+    <div class="tip"><b>可以怎么讲</b>：电可以让铁变成磁铁。电话听筒里也有线圈和磁铁在互相推。</div>
+    <div class="think">⚠️ 通电不要超过 20 秒，电池会热。觉得烫就停。</div>
+  </div>
+
+  <!-- 实验 5 -->
+  <div class="card exp" id="exp5">
+    <h2>实验 5　纸杯电磁听筒（听见「电的声音」）</h2>
+    <p class="meta"><span class="tag">第 3 周</span><span class="tag blue">20 分钟</span><span class="tag red">需要采购：漆包线、强磁、音频线</span></p>
+    <p><b>材料</b>：纸杯、漆包线、大号强磁铁（直径 15mm 以上）、3.5mm 音频线（一头剥开两芯）、能播歌的设备（只有 Type-C 手机就买转接头，或用带耳机孔的旧设备）</p>
+    <div class="guessbox">
+      <b>🤔 先猜一猜：</b>把磁铁拿开，纸杯还会出声吗？
+      <div class="guess">
+        <button class="guess-opt">还会出声</button>
+        <button class="guess-opt">不出声了</button>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>杯底外面用胶带固定磁铁（或放杯内贴着杯底）。</li>
+      <li>用漆包线在杯底绕 50–100 圈做成线圈，（家长）刮净线头。</li>
+      <li>把音频线的两根芯接到线圈两端（接错了换一根试）。</li>
+      <li>音量先开小，播放说话或节奏清楚的歌，把纸杯罩在耳边听。</li>
+      <li>拿开磁铁再听一次。</li>
+    </ol>
+    <p><b>👀 看到了什么</b>：有磁铁时能听到很轻的声音；拿开磁铁，声音几乎消失。</p>
+    <div class="tip"><b>可以怎么讲</b>：手机送出变化的电 → 线圈变成时强时弱的磁铁 → 和永久磁铁互相推 → 杯底振动 → 听见声音。这就是听筒的祖先。</div>
+    <div class="think">💡 声音会很轻，这是正常的。不要把音量开到最大；用杯子罩住耳朵听即可。</div>
+  </div>
+
+  <!-- 实验 6 -->
+  <div class="card exp" id="exp6">
+    <h2>实验 6　一对一有线对讲</h2>
+    <p class="meta"><span class="tag red">第 4 周</span><span class="tag blue">30 分钟</span><span class="tag red">需要时光电话机基础版</span></p>
+    <p><b>材料</b>：见 <a href="shopping.html">采购清单 · 基础档</a>；组装见 <a href="machine.html">时光电话机设计</a></p>
+    <div class="guessbox">
+      <b>🤔 先猜一猜：</b>隔着门还能听清吗？不按讲键会怎样？
+      <div class="guess">
+        <button class="guess-opt">隔着门也听得清</button>
+        <button class="guess-opt">隔门就听不清</button>
+      </div>
+      <div class="guess">
+        <button class="guess-opt">不按也有声</button>
+        <button class="guess-opt">不按就没声</button>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>（家长主导）装好两只听筒、两块功放、电池和按讲键。</li>
+      <li>孩子给听筒涂色、起名字。</li>
+      <li>一人按讲键说话，另一人听；再轮换。</li>
+      <li>拉开距离：同一房间 → 隔着门 → 线够长就走更远。</li>
+    </ol>
+    <div class="tip"><b>可以怎么讲</b>：这已经是真正的电话原理——一边把声音变成电，电线送到另一边，再变回声音。</div>
+  </div>
+
+  <!-- 实验 7 -->
+  <div class="card exp" id="exp7">
+    <h2>实验 7　小小接线生</h2>
+    <p class="meta"><span class="tag red">第 5 周</span><span class="tag blue">20–30 分钟</span><span class="tag red">需要交换台</span></p>
+    <p><b>材料</b>：时光电话机交换台（见 <a href="machine.html#switchboard">机器设计 · 交换台</a>）</p>
+    <h3>玩法（2–3 人）</h3>
+    <ol class="steps">
+      <li>墙上贴 4–6 个地点：家、学校、医院、消防、爷爷家、好朋友。</li>
+      <li>主叫拿起听筒，按铃。</li>
+      <li>接线生问：「你要打给谁？」</li>
+      <li>把插头插进对应孔。对应小灯亮，对讲接通。</li>
+      <li>故意插错孔，看会不会打给别人。</li>
+      <li>不插线，看能不能通话。</li>
+    </ol>
+    <div class="guessbox">
+      <b>🤔 先猜一猜：</b>不插线，为什么打不通？
+      <div class="guess">
+        <button class="guess-opt">电路没接通</button>
+        <button class="guess-opt">声音太小了</button>
+        <button class="guess-opt">不知道</button>
+      </div>
+    </div>
+    <div class="tip"><b>可以怎么讲</b>：电话局的工作就是把你的线和对方的线连上。号码是「地址」，插头是「手」。后来机器代替了手。</div>
+    <p>🖨️ 记录单：<a href="worksheets.html#w5">W5 小小接线生值班记录</a>　🏛️ 线上版游戏：<a href="museum.html#switch">小博物馆 · 接线生游戏</a></p>
+  </div>
+
+  <!-- 实验 8 -->
+  <div class="card exp" id="exp8">
+    <h2>实验 8　观察一台真的旧电话（可选，强烈推荐）</h2>
+    <p class="meta"><span class="tag red">第 5–6 周</span><span class="tag blue">15 分钟</span><span class="tag red">二手拨号电话摆件</span></p>
+    <p><b>只观察，不拆高压铃流部分。</b>家长可拧开外壳给孩子看：转盘或按键、听筒网罩（里面是喇叭和话筒）、弹簧线、铃或蜂鸣器。</p>
+    <div class="guessbox">
+      <b>🤔 找一找：</b>旧电话上，哪个部分像我们做的纸杯？哪个像磁铁线圈？哪个像交换台？
+    </div>
+    <div class="safety" style="margin:10px 0;">
+      <b>禁止</b>：插入家中电话线插座；拆开时让孩子碰内部大电容（若有）。摆件机通常已不接电信网，只当模型。
+    </div>
+  </div>
+
+  <!-- 失败排查 -->
+  <div class="card">
+    <h2>🩹 如果实验失败</h2>
+    <table class="tbl fail-table">
+      <tr><th>现象</th><th>先查</th></tr>
+      <tr><td>纸杯电话没声</td><td>线是否拉直；结是否松；是否对着杯底说话而不是杯壁</td></tr>
+      <tr><td>电磁铁不吸</td><td>漆包线线头是否刮干净；电池是否有电；圈数是否太少</td></tr>
+      <tr><td>纸杯听筒没声</td><td>磁铁是否靠近线圈；音频线是否接对；音量是否太小；换一根芯再试</td></tr>
+      <tr><td>对讲没声</td><td>电池开关；杜邦线是否插反；喇叭线是否脱落；按讲键是否按下</td></tr>
+      <tr><td>啸叫（刺耳）</td><td>两只听筒离太近；两边同时讲话；错开方向或轮流按键</td></tr>
+    </table>
+    <div class="tip">失败时带孩子说：「科学家也经常第一次不成功。我们换一个条件再试。」<b>不要立刻由家长代做完。</b></div>
+  </div>
+</div>
+
+<footer class="site">小小接线生 · 电话课题实验室</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

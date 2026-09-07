@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电话小博物馆 · 小小接线生</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #fdf6e3;
+    color: #4a3b2a;
+    min-height: 100vh;
+  }
+  header {
+    background: linear-gradient(135deg, #ff9a56, #ff6b6b);
+    color: #fff;
+    text-align: center;
+    padding: 28px 16px;
+  }
+  header h1 { font-size: 2rem; letter-spacing: 2px; }
+  header p { margin-top: 8px; opacity: .95; }
+  .tabs {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    justify-content: center; padding: 16px;
+    background: #fff3d6;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  }
+  .tabs button {
+    border: none; border-radius: 999px; padding: 10px 18px;
+    font-size: 1rem; cursor: pointer; background: #ffd166; color: #4a3b2a;
+    font-weight: bold; transition: transform .15s;
+  }
+  .tabs button:hover { transform: scale(1.06); }
+  .tabs button.active { background: #ff6b6b; color: #fff; }
+  section { display: none; padding: 24px; max-width: 860px; margin: 0 auto; }
+  section.show { display: block; animation: fade .3s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; } }
+  h2 { font-size: 1.5rem; margin-bottom: 14px; color: #d1495b; }
+  .card {
+    background: #fff; border-radius: 16px; padding: 18px 20px;
+    margin-bottom: 14px; box-shadow: 0 3px 10px rgba(0,0,0,.07);
+    font-size: 1.08rem; line-height: 1.8;
+  }
+  .era { border-left: 8px solid #ffd166; cursor: pointer; }
+  .era .more { display: none; margin-top: 8px; color: #6b5b45; }
+  .era.open .more { display: block; }
+  .era .tag {
+    display: inline-block; background: #ffd166; border-radius: 8px;
+    padding: 2px 10px; font-size: .85rem; margin-right: 8px; font-weight: bold;
+  }
+  canvas { background: #fff; border-radius: 16px; display: block; margin: 0 auto; box-shadow: 0 3px 10px rgba(0,0,0,.07); }
+  .big-btn {
+    display: inline-block; border: none; border-radius: 14px;
+    padding: 14px 26px; font-size: 1.15rem; font-weight: bold;
+    background: #06d6a0; color: #fff; cursor: pointer; margin: 8px 6px;
+  }
+  .big-btn:active { transform: scale(.96); }
+  .board { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 16px 0; }
+  .house {
+    width: 130px; padding: 14px 8px; border-radius: 16px; background: #fff;
+    text-align: center; cursor: pointer; border: 4px solid transparent;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08); font-size: 1.05rem;
+  }
+  .house .icon { font-size: 2rem; display: block; }
+  .house.sel { border-color: #ff6b6b; background: #ffe3e3; }
+  .house.linked { border-color: #06d6a0; background: #e0fff4; }
+  .msg { text-align: center; font-size: 1.2rem; min-height: 1.8em; margin: 10px 0; font-weight: bold; color: #d1495b; }
+  .quiz-opt {
+    display: block; width: 100%; text-align: left; margin: 8px 0;
+    padding: 14px 16px; border-radius: 12px; border: 3px solid #ffd166;
+    background: #fff; font-size: 1.05rem; cursor: pointer;
+  }
+  .quiz-opt.right { border-color: #06d6a0; background: #e0fff4; }
+  .quiz-opt.wrong { border-color: #ff6b6b; background: #ffe3e3; }
+  footer { text-align: center; padding: 20px; color: #a08b6d; font-size: .9rem; }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="index.html">☎️ 小小接线生</a>
+  <div class="links">
+    <a href="plan.html">📅 六周计划</a>
+    <a href="story.html">📖 电话故事</a>
+    <a href="experiments.html">🧪 实验</a>
+    <a href="machine.html">🛠️ 做机器</a>
+    <a href="shopping.html">🛒 采购</a>
+    <a href="parents.html">👨‍👩‍👧 家长指南</a>
+    <a href="worksheets.html">🖨️ 练习单</a>
+    <a class="here" href="museum.html">🏛️ 小博物馆</a>
+  </div>
+</nav>
+<header>
+  <h1>☎️ 电话小博物馆</h1>
+  <p>小小接线生的线上展厅 · 离线也能玩</p>
+</header>
+
+<nav class="tabs">
+  <button data-tab="hall" class="active">🏛️ 时光展厅</button>
+  <button data-tab="vibrate">🥁 振动乐园</button>
+  <button data-tab="switch">🔌 接线生游戏</button>
+  <button data-tab="quiz">⭐ 小研究员考验</button>
+</nav>
+
+<section id="hall" class="show">
+  <h2>🏛️ 时光展厅（点一点每张卡片）</h2>
+  <div class="card era" onclick="this.classList.toggle('open')">
+    <span class="tag">很久以前</span><b>跑步和骑马送信</b>
+    <div class="more">想和远方的人说话，只能写信，请人或马跑好多天。急事也没办法快。</div>
+  </div>
+  <div class="card era" onclick="this.classList.toggle('open')">
+    <span class="tag">电话之前</span><b>电报：嘀嘀嗒嗒</b>
+    <div class="more">用电线传「点和划」，像密码一样传字。很快，但传不了说话的声音。</div>
+  </div>
+  <div class="card era" onclick="this.classList.toggle('open')">
+    <span class="tag">1876 年前后</span><b>会说话的机器</b>
+    <div class="more">贝尔和许多发明家一起努力，做出了能把说话变成电、再变回声音的机器。贝尔的一台最有名，还得到了专利。</div>
+  </div>
+  <div class="card era" onclick="this.classList.toggle('open')">
+    <span class="tag">1877–1882</span><b>德律风来到上海</b>
+    <div class="more">电话有个好听的外国名字叫「德律风」。一百多年前，上海有了电话交换所，最早的电话号码只有一两位数！</div>
+  </div>
+  <div class="card era" onclick="this.classList.toggle('open')">
+    <span class="tag">100 多年前</span><b>接线生的时代</b>
+    <div class="more">打电话要先告诉接线生「我要找谁」，她用手把线插到对方家。插错了，电话就打给别人啦。</div>
+  </div>
+  <div class="card era" onclick="this.classList.toggle('open')">
+    <span class="tag">后来</span><b>拨号盘：转个圈</b>
+    <div class="more">人们发明自动交换机。用手指转拨号盘，机器自己接线，不用麻烦接线生了。</div>
+  </div>
+  <div class="card era" onclick="this.classList.toggle('open')">
+    <span class="tag">再后来</span><b>按键电话和手机</b>
+    <div class="more">按键「嘀嘀嘀」比转盘快。再后来电话没了线，变成可以放进口袋的手机，还能看照片、发消息。</div>
+  </div>
+  <div class="card era" onclick="this.classList.toggle('open')">
+    <span class="tag">今天</span><b>我的时光电话机</b>
+    <div class="more">我自己做了一台电话机！声音是振动，电话把振动变成电，再变回声音。—— 一位 7 岁的小研究员</div>
+  </div>
+</section>
+
+<section id="vibrate">
+  <h2>🥁 振动乐园</h2>
+  <div class="card">声音就是振动在跳舞！点下面的按钮，看小米粒跳多高。声音越大，跳得越高。</div>
+  <canvas id="stage" width="720" height="300"></canvas>
+  <div style="text-align:center; margin-top: 12px;">
+    <button class="big-btn" onclick="jump(30)">小声说</button>
+    <button class="big-btn" onclick="jump(70)">正常说</button>
+    <button class="big-btn" onclick="jump(120)">大声喊</button>
+  </div>
+</section>
+
+<section id="switch">
+  <h2>🔌 接线生游戏</h2>
+  <div class="card">你是电话局的接线生！先点「打电话的人」，再点「要找的地方」，把线插上。插错了会打到别人家哦。</div>
+  <div class="msg" id="switchMsg">请先点打电话的人 📞</div>
+  <div class="board" id="board"></div>
+  <div style="text-align:center;"><button class="big-btn" onclick="resetBoard()">下班重来</button></div>
+</section>
+
+<section id="quiz">
+  <h2>⭐ 小研究员考验</h2>
+  <div class="card" id="quizBox"></div>
+  <div class="msg" id="quizMsg"></div>
+  <div style="text-align:center;"><button class="big-btn" onclick="nextQ()">下一题</button></div>
+</section>
+
+<footer>和爸爸妈妈一起做的课题 · 声音是振动，振动会旅行</footer>
+
+<script>
+// 标签页
+document.querySelectorAll('.tabs button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.tabs button').forEach(function (x) { x.classList.remove('active'); });
+    document.querySelectorAll('section').forEach(function (s) { s.classList.remove('show'); });
+    b.classList.add('active');
+    document.getElementById(b.dataset.tab).classList.add('show');
+  });
+});
+
+// 振动乐园
+var cv = document.getElementById('stage'), ctx = cv.getContext('2d');
+var grains = [];
+for (var i = 0; i < 40; i++) {
+  grains.push({ x: 40 + Math.random() * 640, y: 240, vy: 0 });
+}
+function jump(power) {
+  grains.forEach(function (g) { g.vy = -(Math.random() * power) / 10 - power / 20; });
+}
+function tick() {
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  ctx.fillStyle = '#ffd166';
+  ctx.fillRect(20, 240, 680, 14);
+  ctx.fillStyle = '#4a3b2a';
+  ctx.font = '16px sans-serif';
+  ctx.fillText('杯口的膜（鼓面）', 30, 235);
+  grains.forEach(function (g) {
+    g.vy += 0.5; g.y += g.vy;
+    if (g.y > 236) { g.y = 236; g.vy = 0; }
+    ctx.beginPath();
+    ctx.fillStyle = '#d1495b';
+    ctx.arc(g.x, g.y, 5, 0, Math.PI * 2);
+    ctx.fill();
+  });
+  requestAnimationFrame(tick);
+}
+tick();
+
+// 接线生游戏
+var places = [
+  { icon: '📞', name: '打电话的人', caller: true },
+  { icon: '🏠', name: '家' },
+  { icon: '🏫', name: '学校' },
+  { icon: '🏥', name: '医院' },
+  { icon: '🧓', name: '爷爷家' },
+  { icon: '🧒', name: '好朋友家' }
+];
+var board = document.getElementById('board');
+var msg = document.getElementById('switchMsg');
+var caller = null, target = null;
+function renderBoard() {
+  board.innerHTML = '';
+  places.forEach(function (p, idx) {
+    var d = document.createElement('div');
+    d.className = 'house' + (caller === idx ? ' sel' : '') + (target === idx ? ' linked' : '');
+    d.innerHTML = '<span class="icon">' + p.icon + '</span>' + p.name;
+    d.onclick = function () { pick(idx); };
+    board.appendChild(d);
+  });
+}
+function pick(idx) {
+  if (places[idx].caller) {
+    caller = idx; target = null;
+    msg.textContent = '「喂，接线生吗？」—— 再点要找的地方';
+  } else if (caller === null) {
+    msg.textContent = '请先点打电话的人 📞';
+  } else {
+    target = idx;
+    msg.textContent = '插上线啦！电话接通：打电话的人 → ' + places[idx].name + ' ✅';
+  }
+  renderBoard();
+}
+function resetBoard() {
+  caller = null; target = null;
+  msg.textContent = '请先点打电话的人 📞';
+  renderBoard();
+}
+renderBoard();
+
+// 小考验
+var qs = [
+  { q: '声音到底是什么？', opts: ['一种颜色', '物体的振动', '一阵风'], a: 1 },
+  { q: '纸杯电话的线要怎样才听得清？', opts: ['拉直拉紧', '松松垮垮', '剪成两段'], a: 0 },
+  { q: '打电话时，中间捏住纸杯电话的线，会怎样？', opts: ['声音更大', '听不见了', '变成音乐'], a: 1 },
+  { q: '真电话先把声音变成什么？', opts: ['光', '电', '水'], a: 1 },
+  { q: '以前谁帮你把电话线插到对方家？', opts: ['邮递员', '接线生', '警察'], a: 1 },
+  { q: '早期上海把电话叫什么？', opts: ['德律风', '千里眼', '顺风耳号'], a: 0 }
+];
+var qi = 0;
+function showQ() {
+  var box = document.getElementById('quizBox');
+  var q = qs[qi % qs.length];
+  box.innerHTML = '<b>第 ' + (qi % qs.length + 1) + ' 题：</b>' + q.q;
+  q.opts.forEach(function (o, i) {
+    var b = document.createElement('button');
+    b.className = 'quiz-opt';
+    b.textContent = o;
+    b.onclick = function () {
+      if (i === q.a) { b.classList.add('right'); document.getElementById('quizMsg').textContent = '答对啦！🎉'; }
+      else { b.classList.add('wrong'); document.getElementById('quizMsg').textContent = '再想想，你可以的！'; }
+    };
+    box.appendChild(b);
+  });
+  document.getElementById('quizMsg').textContent = '';
+}
+function nextQ() { qi++; showQ(); }
+showQ();
+
+// 支持 file://...museum.html#switch 直接打开某个展厅
+if (location.hash) {
+  var t = document.querySelector('.tabs button[data-tab="' + location.hash.slice(1) + '"]');
+  if (t) t.click();
+}
+</script>
+</body>
+</html>
