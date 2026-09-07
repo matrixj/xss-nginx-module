@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>时光电话机设计 · 小小接线生</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="index.html">☎️ 小小接线生</a>
+  <div class="links">
+    <a href="plan.html">📅 六周计划</a>
+    <a href="story.html">📖 电话故事</a>
+    <a href="experiments.html">🧪 实验</a>
+    <a class="here" href="machine.html">🛠️ 做机器</a>
+    <a href="shopping.html">🛒 采购</a>
+    <a href="parents.html">👨‍👩‍👧 家长指南</a>
+    <a href="worksheets.html">🖨️ 练习单</a>
+    <a href="museum.html">🏛️ 小博物馆</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="pagehead">
+    <h1>🛠️ 「小小接线生 · 时光电话机」</h1>
+    <p>一台 7 岁孩子能操作的有线对讲 + 人工交换台 · 全程电池供电 · 免焊接也能完成</p>
+  </div>
+
+  <div class="card">
+    <h2>👀 它长什么样</h2>
+    <figure class="diagram">
+      <svg viewBox="0 0 780 430" role="img" aria-label="时光电话机外观图">
+        <defs>
+          <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#8a7a63"/>
+          </marker>
+        </defs>
+        <!-- 主机 -->
+        <rect x="150" y="20" rx="18" ry="18" width="480" height="230" fill="#fff3d6" stroke="#d1495b" stroke-width="4"/>
+        <text x="390" y="52" text-anchor="middle" font-size="20" font-weight="bold" fill="#d1495b">时 光 电 话 机 主 机（××电话局）</text>
+        <!-- 时代灯 -->
+        <g font-size="12" fill="#4a3b2a" text-anchor="middle">
+          <circle cx="220" cy="90" r="13" fill="#ffd166" stroke="#4a3b2a" stroke-width="2"/>
+          <text x="220" y="122">1876 绳</text>
+          <circle cx="330" cy="90" r="13" fill="#ffd166" stroke="#4a3b2a" stroke-width="2"/>
+          <text x="330" y="122">1882 电</text>
+          <circle cx="440" cy="90" r="13" fill="#ffd166" stroke="#4a3b2a" stroke-width="2"/>
+          <text x="440" y="122">接线生</text>
+          <circle cx="550" cy="90" r="13" fill="#ffd166" stroke="#4a3b2a" stroke-width="2"/>
+          <text x="550" y="122">2026 手机</text>
+        </g>
+        <!-- 交换台插孔 -->
+        <g font-size="14" text-anchor="middle" fill="#4a3b2a">
+          <rect x="185" y="140" width="90" height="64" rx="10" fill="#fff" stroke="#ff6b6b" stroke-width="3"/>
+          <circle cx="230" cy="166" r="11" fill="#4a3b2a"/><text x="230" y="196">家</text>
+          <rect x="290" y="140" width="90" height="64" rx="10" fill="#fff" stroke="#ff6b6b" stroke-width="3"/>
+          <circle cx="335" cy="166" r="11" fill="#4a3b2a"/><text x="335" y="196">学校</text>
+          <rect x="395" y="140" width="90" height="64" rx="10" fill="#fff" stroke="#ff6b6b" stroke-width="3"/>
+          <circle cx="440" cy="166" r="11" fill="#4a3b2a"/><text x="440" y="196">医院</text>
+          <rect x="500" y="140" width="90" height="64" rx="10" fill="#fff" stroke="#ff6b6b" stroke-width="3"/>
+          <circle cx="545" cy="166" r="11" fill="#4a3b2a"/><text x="545" y="196">爷爷家</text>
+        </g>
+        <text x="390" y="232" text-anchor="middle" font-size="13" fill="#8a7a63">🔔 呼叫铃　　⏻ 电源开关　　🔋 电池盒 4×AA</text>
+        <!-- 插头线 -->
+        <path d="M230 204 C 200 260, 150 280, 120 300" stroke="#4a3b2a" stroke-width="3" fill="none" stroke-dasharray="6 4"/>
+        <circle cx="120" cy="300" r="9" fill="#ff6b6b"/>
+        <text x="120" y="326" text-anchor="middle" font-size="12" fill="#8a7a63">接线生的手（插头）</text>
+        <!-- 长线 -->
+        <path d="M150 250 C 60 300, 60 340, 90 370" stroke="#4d96ff" stroke-width="3" fill="none" marker-end="url(#ar2)"/>
+        <path d="M630 250 C 720 300, 720 340, 690 370" stroke="#4d96ff" stroke-width="3" fill="none" marker-end="url(#ar2)"/>
+        <text x="60" y="330" font-size="12" fill="#4d96ff">长线 3–10 米</text>
+        <text x="640" y="330" font-size="12" fill="#4d96ff">长线</text>
+        <!-- 听筒 -->
+        <g>
+          <rect x="30" y="368" rx="26" ry="26" width="120" height="52" fill="#e0fff4" stroke="#06d6a0" stroke-width="4"/>
+          <text x="90" y="392" text-anchor="middle" font-size="15" fill="#4a3b2a">听筒 A</text>
+          <text x="90" y="410" text-anchor="middle" font-size="11" fill="#8a7a63">话筒+喇叭+按讲键</text>
+          <rect x="630" y="368" rx="26" ry="26" width="120" height="52" fill="#e0fff4" stroke="#06d6a0" stroke-width="4"/>
+          <text x="690" y="392" text-anchor="middle" font-size="15" fill="#4a3b2a">听筒 B</text>
+          <text x="690" y="410" text-anchor="middle" font-size="11" fill="#8a7a63">话筒+喇叭+按讲键</text>
+        </g>
+      </svg>
+      <figcaption>主机 = 电话局（交换台 + 呼叫铃 + 电池）；听筒 A/B = 两个一模一样的对讲端。</figcaption>
+    </figure>
+    <div class="grid3">
+      <div class="tip"><b>能通</b> ✅<br>两边真的能听见说话（科学证据）</div>
+      <div class="tip"><b>能玩</b> ✅<br>孩子当接线生插线（历史体验）</div>
+      <div class="tip"><b>能讲</b> ✅<br>指着时代灯说出电话的演变（结题展品）</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔊 工作原理（讲给孩子听的版本）</h2>
+    <figure class="diagram">
+      <svg viewBox="0 0 780 170" role="img" aria-label="工作原理图">
+        <defs>
+          <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#d1495b"/>
+          </marker>
+        </defs>
+        <rect x="10" y="45" rx="14" ry="14" width="150" height="80" fill="#e0fff4" stroke="#06d6a0" stroke-width="3"/>
+        <text x="85" y="80" text-anchor="middle" font-size="16" fill="#4a3b2a">听筒 A</text>
+        <text x="85" y="104" text-anchor="middle" font-size="12" fill="#8a7a63">说话→话筒变电</text>
+        <line x1="160" y1="85" x2="300" y2="85" stroke="#d1495b" stroke-width="3" marker-end="url(#ar3)"/>
+        <rect x="305" y="45" rx="14" ry="14" width="170" height="80" fill="#fff3d6" stroke="#ffd166" stroke-width="3"/>
+        <text x="390" y="80" text-anchor="middle" font-size="16" fill="#4a3b2a">长长的电线</text>
+        <text x="390" y="104" text-anchor="middle" font-size="12" fill="#8a7a63">穿过交换台</text>
+        <line x1="475" y1="85" x2="615" y2="85" stroke="#d1495b" stroke-width="3" marker-end="url(#ar3)"/>
+        <rect x="620" y="45" rx="14" ry="14" width="150" height="80" fill="#e0fff4" stroke="#06d6a0" stroke-width="3"/>
+        <text x="695" y="80" text-anchor="middle" font-size="16" fill="#4a3b2a">听筒 B</text>
+        <text x="695" y="104" text-anchor="middle" font-size="12" fill="#8a7a63">电推喇叭→振动→声音</text>
+      </svg>
+      <figcaption>交换台做的事和 100 年前的接线生一样：决定电走哪条路。插头 = 接线生的手，插孔 = 各家各户。</figcaption>
+    </figure>
+  </div>
+
+  <div class="card" id="switchboard">
+    <h2>🔌 电路框图</h2>
+    <figure class="diagram">
+      <svg viewBox="0 0 780 360" role="img" aria-label="电路框图">
+        <defs>
+          <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#4a3b2a"/>
+          </marker>
+        </defs>
+        <!-- 电源 -->
+        <rect x="270" y="12" rx="12" ry="12" width="240" height="44" fill="#ffe3e3" stroke="#ff6b6b" stroke-width="3"/>
+        <text x="390" y="40" text-anchor="middle" font-size="15" fill="#4a3b2a">4×AA 电池盒（6V，带总开关）</text>
+        <line x1="270" y1="34" x2="120" y2="34" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#ar4)"/>
+        <line x1="510" y1="34" x2="660" y2="34" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#ar4)"/>
+
+        <!-- 听筒A -->
+        <rect x="20" y="70" rx="14" ry="14" width="220" height="180" fill="#fff" stroke="#06d6a0" stroke-width="3"/>
+        <text x="130" y="94" text-anchor="middle" font-size="16" font-weight="bold" fill="#4a3b2a">听筒 A</text>
+        <g font-size="13" fill="#4a3b2a">
+          <rect x="40" y="108" width="180" height="28" rx="8" fill="#e8f1ff"/><text x="130" y="127" text-anchor="middle">驻极体话筒模块</text>
+          <rect x="40" y="144" width="180" height="28" rx="8" fill="#e8f1ff"/><text x="130" y="163" text-anchor="middle">按讲键 PTT（串联话筒供电）</text>
+          <rect x="40" y="180" width="180" height="28" rx="8" fill="#e8f1ff"/><text x="130" y="199" text-anchor="middle">LM386 功放模块</text>
+          <rect x="40" y="216" width="180" height="28" rx="8" fill="#e8f1ff"/><text x="130" y="235" text-anchor="middle">8Ω 小喇叭</text>
+        </g>
+
+        <!-- 听筒B -->
+        <rect x="540" y="70" rx="14" ry="14" width="220" height="180" fill="#fff" stroke="#06d6a0" stroke-width="3"/>
+        <text x="650" y="94" text-anchor="middle" font-size="16" font-weight="bold" fill="#4a3b2a">听筒 B</text>
+        <g font-size="13" fill="#4a3b2a">
+          <rect x="560" y="108" width="180" height="28" rx="8" fill="#e8f1ff"/><text x="650" y="127" text-anchor="middle">驻极体话筒模块</text>
+          <rect x="560" y="144" width="180" height="28" rx="8" fill="#e8f1ff"/><text x="650" y="163" text-anchor="middle">按讲键 PTT</text>
+          <rect x="560" y="180" width="180" height="28" rx="8" fill="#e8f1ff"/><text x="650" y="199" text-anchor="middle">LM386 功放模块</text>
+          <rect x="560" y="216" width="180" height="28" rx="8" fill="#e8f1ff"/><text x="650" y="235" text-anchor="middle">8Ω 小喇叭</text>
+        </g>
+
+        <!-- 音频线 -->
+        <line x1="240" y1="150" x2="330" y2="150" stroke="#4d96ff" stroke-width="3" marker-end="url(#ar4)"/>
+        <line x1="450" y1="150" x2="540" y2="150" stroke="#4d96ff" stroke-width="3" marker-end="url(#ar4)"/>
+        <rect x="330" y="128" rx="10" ry="10" width="120" height="44" fill="#fff3d6" stroke="#ffd166" stroke-width="3"/>
+        <text x="390" y="147" text-anchor="middle" font-size="12" fill="#4a3b2a">双芯长线</text>
+        <text x="390" y="164" text-anchor="middle" font-size="12" fill="#4a3b2a">（经交换台）</text>
+
+        <!-- 交换台 -->
+        <rect x="230" y="280" rx="14" ry="14" width="320" height="66" fill="#fff3d6" stroke="#d1495b" stroke-width="3"/>
+        <text x="390" y="304" text-anchor="middle" font-size="14" font-weight="bold" fill="#4a3b2a">交换台：插头 → [家/学校/医院/爷爷家]</text>
+        <text x="390" y="326" text-anchor="middle" font-size="12" fill="#8a7a63">基础版：各孔并联到 B，插入点亮对应 LED（+220Ω）</text>
+
+        <!-- 呼叫铃 -->
+        <rect x="20" y="280" rx="12" ry="12" width="180" height="66" fill="#fff" stroke="#ff9a56" stroke-width="3"/>
+        <text x="110" y="304" text-anchor="middle" font-size="13" fill="#4a3b2a">A 端呼叫按钮</text>
+        <text x="110" y="326" text-anchor="middle" font-size="13" fill="#4a3b2a">→ 主机有源蜂鸣器 🔔</text>
+      </svg>
+      <figcaption>给 7 岁的简化：基础版插孔只做「灯亮 + 接通 B」两件事。孩子体验到「插线才能通」就够了。</figcaption>
+    </figure>
+
+    <h3>各模块怎么接（基础版，免焊接）</h3>
+    <table class="tbl">
+      <tr><th>模块</th><th>接法</th></tr>
+      <tr><td>话筒 → 功放</td><td>驻极体话筒模块（带放大板）OUT → 功放 IN；共地</td></tr>
+      <tr><td>功放 → 喇叭</td><td>功放 OUT+ / OUT− → 8Ω 喇叭两线</td></tr>
+      <tr><td>按讲键 PTT</td><td>串联在话筒供电线上：按下才送话（防啸叫、像真对讲机）</td></tr>
+      <tr><td>电源</td><td>4×AA 电池盒 → 总开关 → 两块功放 VCC/GND</td></tr>
+      <tr><td>长线</td><td>双芯线 3–10 米：一芯音频、一芯地。两端用 3.5mm 插头/插座对接，方便收纳</td></tr>
+      <tr><td>呼叫铃</td><td>A 端按钮 → 主机有源蜂鸣器（5V）→ 电源</td></tr>
+      <tr><td>插孔灯</td><td>每个插孔旁 LED + 220Ω 电阻；插头插入压下微动开关即点亮</td></tr>
+    </table>
+    <div class="tip">免焊接三件套：<b>杜邦线、按压式接线端子、面包板</b>。需要更牢固时请家长用电烙铁（升级版）。</div>
+  </div>
+
+  <div class="card">
+    <h2>📦 外壳制作（孩子参与度最高的部分）</h2>
+    <ol class="steps">
+      <li><b>主机</b>：鞋盒大小的纸盒或 30×20×10cm 木盒。家长开好插孔圆孔和开关孔。</li>
+      <li><b>孩子任务</b>：给主机涂色、写名字（「××电话局」）；画 4–6 个地点小卡片贴在插孔旁；贴四个时代贴纸（绳子 → 电线 → 接线生 → 手机）。</li>
+      <li><b>听筒</b>：两个纸杯或圆形塑料盒做外壳，喇叭和话筒用热熔胶固定（家长操作），手柄用粗纸筒。孩子装饰成「老电话」样子。</li>
+      <li><b>插头线</b>：3.5mm 插头接双芯线，线尾挂一个木珠当「接线生的手」。</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>🪜 调试顺序（每步都让孩子在场看）</h2>
+    <ol class="steps">
+      <li>单听筒：话筒 → 功放 → 喇叭，对着话筒吹气，喇叭有声。</li>
+      <li>双听筒直连：A 说 B 听，反过来再试。</li>
+      <li>加按讲键：不按没声，按了有声。</li>
+      <li>加长线：拉到走廊尽头再试。</li>
+      <li>加呼叫铃：按铃，主机响。</li>
+      <li>加交换台：插孔灯亮，通话正常。</li>
+      <li>总装外壳，孩子验收：「××电话局正式开业！」</li>
+    </ol>
+    <div class="think">💡 每步失败都只查当前这一步新增的线，不要全拆。</div>
+  </div>
+
+  <div class="card">
+    <h2>🔽 简化与降级方案</h2>
+    <table class="tbl">
+      <tr><th>如果</th><th>就</th></tr>
+      <tr><td>不想做交换台</td><td>只做实验 6 的一对一对讲，用鞋盒挖孔当「电话局」装饰</td></tr>
+      <tr><td>没有微动开关</td><td>插孔灯改成「插入后由家长拨一个小开关」，仪式感十足即可</td></tr>
+      <tr><td>买不到功放套件</td><td>用两块 LM386 成品功放板（约 3–5 元/块），自带电位器</td></tr>
+      <tr><td>没有 3.5mm 插头</td><td>长线两端用按压接线端子直连，牺牲可插拔</td></tr>
+      <tr><td>孩子才 5–6 岁</td><td>只做纸杯电话 + 电磁听筒 + 观察旧电话，机器由家长做好给孩子玩</td></tr>
+    </table>
+  </div>
+
+  <details class="acc">
+    <summary>🔧 升级版（可选，需要焊接）</summary>
+    <div class="acc-body">
+      <p>• 加听筒 C：交换台插孔分别接 B/C，实现真正「打给不同的人」。</p>
+      <p>• 用继电器做插孔自动切换，插入即断开其他路。</p>
+      <p>• 加一块「拨号盘脉冲 → LED 闪烁」演示板，展示拨号盘时代（纯演示，不接电信网）。</p>
+      <p>• 录音模块（ISD1820）做「留言电话」：没人接就留言。</p>
+    </div>
+  </details>
+
+  <div class="card" style="text-align:center;">
+    <p>零件齐了就开始组装吧</p>
+    <a class="btn warn" href="shopping.html">🛒 去看采购清单</a>
+    <a class="btn" href="experiments.html#exp6">🧪 装好后做实验 6</a>
+  </div>
+</div>
+
+<footer class="site">小小接线生 · 电话课题实验室</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

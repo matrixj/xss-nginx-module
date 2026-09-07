@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>电话小博物馆 · 小小接线生</title>
+<link rel="stylesheet" href="assets/style.css">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -20,19 +21,19 @@
   }
   header h1 { font-size: 2rem; letter-spacing: 2px; }
   header p { margin-top: 8px; opacity: .95; }
-  nav {
+  .tabs {
     display: flex; flex-wrap: wrap; gap: 10px;
     justify-content: center; padding: 16px;
-    background: #fff3d6; position: sticky; top: 0; z-index: 9;
+    background: #fff3d6;
     box-shadow: 0 2px 6px rgba(0,0,0,.08);
   }
-  nav button {
+  .tabs button {
     border: none; border-radius: 999px; padding: 10px 18px;
     font-size: 1rem; cursor: pointer; background: #ffd166; color: #4a3b2a;
     font-weight: bold; transition: transform .15s;
   }
-  nav button:hover { transform: scale(1.06); }
-  nav button.active { background: #ff6b6b; color: #fff; }
+  .tabs button:hover { transform: scale(1.06); }
+  .tabs button.active { background: #ff6b6b; color: #fff; }
   section { display: none; padding: 24px; max-width: 860px; margin: 0 auto; }
   section.show { display: block; animation: fade .3s ease; }
   @keyframes fade { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; } }
@@ -77,12 +78,25 @@
 </style>
 </head>
 <body>
+<nav class="topnav">
+  <a class="brand" href="index.html">☎️ 小小接线生</a>
+  <div class="links">
+    <a href="plan.html">📅 六周计划</a>
+    <a href="story.html">📖 电话故事</a>
+    <a href="experiments.html">🧪 实验</a>
+    <a href="machine.html">🛠️ 做机器</a>
+    <a href="shopping.html">🛒 采购</a>
+    <a href="parents.html">👨‍👩‍👧 家长指南</a>
+    <a href="worksheets.html">🖨️ 练习单</a>
+    <a class="here" href="museum.html">🏛️ 小博物馆</a>
+  </div>
+</nav>
 <header>
   <h1>☎️ 电话小博物馆</h1>
   <p>小小接线生的线上展厅 · 离线也能玩</p>
 </header>
 
-<nav>
+<nav class="tabs">
   <button data-tab="hall" class="active">🏛️ 时光展厅</button>
   <button data-tab="vibrate">🥁 振动乐园</button>
   <button data-tab="switch">🔌 接线生游戏</button>
@@ -155,9 +169,9 @@
 
 <script>
 // 标签页
-document.querySelectorAll('nav button').forEach(function (b) {
+document.querySelectorAll('.tabs button').forEach(function (b) {
   b.addEventListener('click', function () {
-    document.querySelectorAll('nav button').forEach(function (x) { x.classList.remove('active'); });
+    document.querySelectorAll('.tabs button').forEach(function (x) { x.classList.remove('active'); });
     document.querySelectorAll('section').forEach(function (s) { s.classList.remove('show'); });
     b.classList.add('active');
     document.getElementById(b.dataset.tab).classList.add('show');
@@ -264,7 +278,7 @@ showQ();
 
 // 支持 file://...museum.html#switch 直接打开某个展厅
 if (location.hash) {
-  var t = document.querySelector('nav button[data-tab="' + location.hash.slice(1) + '"]');
+  var t = document.querySelector('.tabs button[data-tab="' + location.hash.slice(1) + '"]');
   if (t) t.click();
 }
 </script>

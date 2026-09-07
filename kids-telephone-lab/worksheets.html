@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>练习单（可打印） · 小小接线生</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .circle-opt {
+    display: inline-block; border: 2px solid #cbbfa5; border-radius: 999px;
+    padding: 4px 14px; margin: 3px 6px 3px 0; background: #fffdf5;
+  }
+  .stamp { font-size: 1.6rem; }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="index.html">☎️ 小小接线生</a>
+  <div class="links">
+    <a href="plan.html">📅 六周计划</a>
+    <a href="story.html">📖 电话故事</a>
+    <a href="experiments.html">🧪 实验</a>
+    <a href="machine.html">🛠️ 做机器</a>
+    <a href="shopping.html">🛒 采购</a>
+    <a href="parents.html">👨‍👩‍👧 家长指南</a>
+    <a class="here" href="worksheets.html">🖨️ 练习单</a>
+    <a href="museum.html">🏛️ 小博物馆</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="pagehead no-print">
+    <h1>🖨️ 练习单（可打印）</h1>
+    <p>孩子填写 · 家长代写也可以 · 点按钮打印，每张单自动分页</p>
+    <button class="btn" onclick="window.print()">🖨️ 打印全部练习单</button>
+  </div>
+
+  <!-- W1 -->
+  <div class="sheet" id="w1">
+    <h2>W1 · 我的研究问题</h2>
+    <p class="meta">姓名：＿＿＿＿＿＿　日期：＿＿＿＿＿＿　（第 1 周）</p>
+    <h3>我们要研究的大问题</h3>
+    <p style="font-size:1.25rem; font-weight:bold; color:var(--deep);">声音怎么才能跑到很远的地方？</p>
+    <h3>我的三个小问题（和家长一起写，或画出来）</h3>
+    <p>1. 说话的时候，到底什么在<span class="wline short"></span>？</p>
+    <p>2. 没有电的时候，人们怎么「打电话」？</p>
+    <p>3. 接线生是干什么的？</p>
+    <h3>我自己还想问</h3>
+    <div class="wline"></div>
+    <div class="wline"></div>
+  </div>
+
+  <!-- W2 -->
+  <div class="sheet" id="w2">
+    <h2>W2 · 米粒跳舞实验记录</h2>
+    <p class="meta">姓名：＿＿＿＿＿＿　日期：＿＿＿＿＿＿　（第 1 周 · 实验 1）</p>
+    <h3>我的猜想（实验前圈一圈）</h3>
+    <p><span class="circle-opt">不动</span><span class="circle-opt">轻轻跳</span><span class="circle-opt">跳得很凶</span></p>
+    <h3>我做了什么</h3>
+    <p>在杯口蒙上保鲜膜，放上米粒，在旁边（说话 / 拍手 / 敲杯子）。</p>
+    <h3>我看到了（画一画或圈一圈）</h3>
+    <p>米粒：<span class="circle-opt">没动</span><span class="circle-opt">动了一点点</span><span class="circle-opt">跳起来了</span></p>
+    <p>大声的时候：<span class="circle-opt">跳得高</span><span class="circle-opt">跳得低</span><span class="circle-opt">一样</span></p>
+    <h3>我的发现（说一句）</h3>
+    <p>因为<span class="wline short"></span>，所以米粒<span class="wline short"></span>。</p>
+    <p class="meta">（提示：杯口的膜在振动）</p>
+  </div>
+
+  <!-- W3 -->
+  <div class="sheet" id="w3">
+    <h2>W3 · 纸杯电话实验记录</h2>
+    <p class="meta">姓名：＿＿＿＿＿＿　日期：＿＿＿＿＿＿　（第 2 周 · 实验 3）</p>
+    <h3>我的猜想</h3>
+    <p>我觉得最清楚的线是：<span class="circle-opt">棉线</span><span class="circle-opt">钓鱼线</span><span class="circle-opt">毛线</span></p>
+    <h3>试一试，填一填（✓ 听得清　△ 有点清　✗ 听不清）</h3>
+    <table class="tbl">
+      <tr><th>条件</th><th>结果</th></tr>
+      <tr><td>棉线，拉直</td><td></td></tr>
+      <tr><td>钓鱼线，拉直</td><td></td></tr>
+      <tr><td>毛线，拉直</td><td></td></tr>
+      <tr><td>棉线，放松（线弯弯的）</td><td></td></tr>
+      <tr><td>棉线拉直，中间捏住</td><td></td></tr>
+    </table>
+    <h3>我的发现</h3>
+    <p>1. 线要<span class="wline short"></span>，声音才能过去。</p>
+    <p>2. 中间捏住线，声音就<span class="wline short"></span>，因为振动被<span class="wline short"></span>。</p>
+    <p>3. 我觉得最好用的线是<span class="wline short"></span>。</p>
+    <h3>画一画：声音在纸杯电话里旅行的路线</h3>
+    <div style="border:2px dashed #cbbfa5; border-radius:12px; height:150px;"></div>
+  </div>
+
+  <!-- W4 -->
+  <div class="sheet" id="w4">
+    <h2>W4 · 电话历史时间线（剪贴海报）</h2>
+    <p class="meta">姓名：＿＿＿＿＿＿　日期：＿＿＿＿＿＿　（第 6 周）</p>
+    <p>把下面的事件卡剪下来，按顺序贴在一张大纸上，再画上连接线。顺序对了，就是一部电话史。</p>
+    <table class="tbl">
+      <tr><th>✂️ 事件卡（剪下）</th><th>大概年代</th></tr>
+      <tr><td>人跑步、骑马送信</td><td>很久以前</td></tr>
+      <tr><td>电报「嘀嘀嗒」传字</td><td>电话之前</td></tr>
+      <tr><td>贝尔做出有名的电话</td><td>1876 年前后</td></tr>
+      <tr><td>上海出现「德律风」</td><td>1877–1882</td></tr>
+      <tr><td>接线生帮你插线</td><td>100 多年前</td></tr>
+      <tr><td>拨号盘，转圈子</td><td>后来</td></tr>
+      <tr><td>按键电话「嘀嘀嘀」</td><td>再后来</td></tr>
+      <tr><td>大哥大和手机</td><td>爸爸妈妈小时候</td></tr>
+      <tr><td>我的时光电话机</td><td>今天！</td></tr>
+    </table>
+    <p>我最喜欢的一个年代是<span class="wline short"></span>，因为<span class="wline short"></span>。</p>
+    <p class="meta">（背面可以贴：纸杯电话照片、机器照片、和家人的通话照片）</p>
+  </div>
+
+  <!-- W5 -->
+  <div class="sheet" id="w5">
+    <h2>W5 · 小小接线生值班记录</h2>
+    <p class="meta">姓名：＿＿＿＿＿＿　日期：＿＿＿＿＿＿　（第 5 周 · 实验 7）</p>
+    <p>今天我值班的电话局叫：<span class="wline short"></span>电话局</p>
+    <h3>我接通的电话（每通一次画一笔「正」字，或贴贴纸）</h3>
+    <table class="tbl">
+      <tr><th>从</th><th>到</th><th>接通了吗</th></tr>
+      <tr><td>家</td><td>医院</td><td></td></tr>
+      <tr><td>学校</td><td>爷爷家</td><td></td></tr>
+      <tr><td>＿＿＿</td><td>＿＿＿</td><td></td></tr>
+    </table>
+    <h3>我故意试了一试</h3>
+    <table class="tbl">
+      <tr><th>我做的事</th><th>结果</th></tr>
+      <tr><td>不插线就说话</td><td>对方：听见 / 没听见</td></tr>
+      <tr><td>插错孔</td><td>打给了：＿＿＿＿＿＿</td></tr>
+      <tr><td>两个人同时说话</td><td>听起来：＿＿＿＿＿＿</td></tr>
+    </table>
+    <h3>我的发现</h3>
+    <p>接线生的工作是把<span class="wline short"></span>和<span class="wline short"></span>连起来。</p>
+    <p>如果世界上没有接线生也没有交换机，每家都要拉<span class="wline short"></span>根线，太<span class="wline short"></span>了。</p>
+  </div>
+
+  <!-- W6 -->
+  <div class="sheet" id="w6">
+    <h2>W6 · 结题小报告：我是电话小研究员</h2>
+    <p class="meta">姓名：＿＿＿＿＿＿　日期：＿＿＿＿＿＿　（第 6 周 · 孩子口述 + 画图，家长代写）</p>
+    <h3>我研究的问题</h3>
+    <p>声音怎么才能跑到很远的地方？</p>
+    <h3>我做过的实验（圈出做过的）</h3>
+    <p>
+      <span class="circle-opt">米粒跳舞</span><span class="circle-opt">摸喉咙</span><span class="circle-opt">纸杯电话</span><span class="circle-opt">电磁铁</span><br>
+      <span class="circle-opt">纸杯听筒</span><span class="circle-opt">有线对讲</span><span class="circle-opt">小小接线生</span><span class="circle-opt">观察旧电话</span>
+    </p>
+    <h3>我的三个大发现</h3>
+    <p>1. 声音是<span class="wline short"></span>。（提示：一种跳舞 / 振动）</p>
+    <p>2. 电话先把声音变成<span class="wline short"></span>，再变回<span class="wline short"></span>。</p>
+    <p>3. 接线生、拨号盘、手机，都是为了让电话连得更快、更方便。</p>
+    <h3>我的机器</h3>
+    <p>我的机器叫：<span class="wline short"></span></p>
+    <p>它能：</p>
+    <div class="wline"></div>
+    <p>我最得意的部分是：</p>
+    <div class="wline"></div>
+    <h3>我还想研究（下一个课题的种子）</h3>
+    <div class="wline"></div>
+    <h3>研究员签名</h3>
+    <p>孩子：＿＿＿＿＿＿　　家长助手：＿＿＿＿＿＿</p>
+    <p class="stamp" style="text-align:center; margin-top:10px;">🎓 恭喜完成第一个科学课题！</p>
+  </div>
+</div>
+
+<footer class="site">小小接线生 · 电话课题实验室</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

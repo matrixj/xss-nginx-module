@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>采购清单 · 小小接线生</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .tier-note { text-align: center; color: var(--muted); margin: 4px 0 10px; }
+  .oneclick { background: #fffcf3; border-radius: 12px; padding: 14px 16px; font-size: .95rem; }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="index.html">☎️ 小小接线生</a>
+  <div class="links">
+    <a href="plan.html">📅 六周计划</a>
+    <a href="story.html">📖 电话故事</a>
+    <a href="experiments.html">🧪 实验</a>
+    <a href="machine.html">🛠️ 做机器</a>
+    <a class="here" href="shopping.html">🛒 采购</a>
+    <a href="parents.html">👨‍👩‍👧 家长指南</a>
+    <a href="worksheets.html">🖨️ 练习单</a>
+    <a href="museum.html">🏛️ 小博物馆</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="pagehead">
+    <h1>🛒 采购清单</h1>
+    <p>三档预算 · 勾掉家里已有的，底部自动算「还要花多少钱」 · 勾选状态会记住</p>
+  </div>
+
+  <div data-seg-wrap>
+    <div class="seg" data-seg>
+      <button data-segbtn="t1" class="on">🎈 极简档（20–40 元）</button>
+      <button data-segbtn="t2">⭐ 基础档（80–150 元，推荐）</button>
+      <button data-segbtn="t3">🚀 升级档（200–350 元）</button>
+    </div>
+    <p class="tier-note" id="tierNote">极简档：完成实验 1–5（声音、纸杯电话、电磁铁、电磁听筒），本周就能下单。</p>
+
+    <!-- 极简档 -->
+    <div class="segpage on" data-segpage="t1">
+      <div class="card">
+        <h2>🎈 极简档清单</h2>
+        <ul class="checklist" data-shoplist>
+          <li><input type="checkbox" data-persist="s-wire" data-shop data-p="8"><span class="nm">漆包线 0.3–0.5mm（1 卷 50g）</span><span class="kw">搜：漆包线 铜线 0.4mm 实验</span><span class="pr">6–10 元</span></li>
+          <li><input type="checkbox" data-persist="s-magnet" data-shop data-p="7"><span class="nm">钕铁硼强磁 圆片 D15×5mm ×4</span><span class="kw">搜：钕磁铁 圆形 15mm 强磁 · 大号防误吞</span><span class="pr">5–8 元</span></li>
+          <li><input type="checkbox" data-persist="s-nail" data-shop data-p="2"><span class="nm">大铁钉 10cm ×2</span><span class="kw">搜：铁钉 大号</span><span class="pr">约 2 元</span></li>
+          <li><input type="checkbox" data-persist="s-bat2" data-shop data-p="3"><span class="nm">AA 电池盒 2 节带开关</span><span class="kw">搜：电池盒 2节5号 带开关带线</span><span class="pr">约 3 元</span></li>
+          <li><input type="checkbox" data-persist="s-clip" data-shop data-p="2"><span class="nm">回形针 1 盒</span><span class="kw">家里常有</span><span class="pr">约 2 元</span></li>
+          <li><input type="checkbox" data-persist="s-audio" data-shop data-p="7"><span class="nm">3.5mm 音频线（一头剥线）</span><span class="kw">搜：3.5mm 音频线 单头 裸线 DIY</span><span class="pr">5–8 元</span></li>
+          <li><input type="checkbox" data-persist="s-fish" data-shop data-p="4"><span class="nm">钓鱼线 / 细尼龙绳</span><span class="kw">搜：钓鱼线 0.3mm · 实验 3 对比用</span><span class="pr">3–5 元</span></li>
+          <li><input type="checkbox" data-persist="s-home" data-shop data-p="0"><span class="nm">生米/盐、保鲜膜、橡皮筋、纸杯、毛线</span><span class="kw">家里找</span><span class="pr">0 元</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 基础档 -->
+    <div class="segpage" data-segpage="t2">
+      <div class="card">
+        <h2>⭐ 基础档 = 极简档 + 以下（做时光电话机）</h2>
+        <ul class="checklist" data-shoplist>
+          <li><input type="checkbox" data-persist="b-amp" data-shop data-p="20"><span class="nm">LM386 功放模块（成品板带电位器）×2</span><span class="kw">搜：LM386 功放模块 成品（或 8002 功放模块）</span><span class="pr">8–12 元</span></li>
+          <li><input type="checkbox" data-persist="b-mic" data-shop data-p="22"><span class="nm">驻极体话筒模块（带放大板）×2</span><span class="kw">搜：驻极体 麦克风 模块 放大</span><span class="pr">8–14 元</span></li>
+          <li><input type="checkbox" data-persist="b-spk" data-shop data-p="16"><span class="nm">8Ω 0.5W 小喇叭 40–57mm ×2</span><span class="kw">搜：8欧 0.5W 喇叭 57mm</span><span class="pr">6–10 元</span></li>
+          <li><input type="checkbox" data-persist="b-btn" data-shop data-p="5"><span class="nm">大号复位按钮 ×3（2 个按讲 + 1 个呼叫）</span><span class="kw">搜：按钮开关 复位 大按钮</span><span class="pr">4–6 元</span></li>
+          <li><input type="checkbox" data-persist="b-buz" data-shop data-p="3"><span class="nm">有源蜂鸣器 5V（呼叫铃）</span><span class="kw">搜：有源蜂鸣器 5V 长音</span><span class="pr">2–3 元</span></li>
+          <li><input type="checkbox" data-persist="b-bat4" data-shop data-p="4"><span class="nm">4×AA 电池盒 带开关（主机电源）</span><span class="kw">搜：电池盒 4节5号 带开关</span><span class="pr">约 4 元</span></li>
+          <li><input type="checkbox" data-persist="b-aa" data-shop data-p="10"><span class="nm">AA 电池 ×8（备 4 节）</span><span class="kw">超市</span><span class="pr">约 10 元</span></li>
+          <li><input type="checkbox" data-persist="b-cable" data-shop data-p="10"><span class="nm">双芯电线 10 米（或旧网线拆对绞线）</span><span class="kw">搜：双芯电线 0.3平方 10米 / 网线 超五类</span><span class="pr">8–12 元</span></li>
+          <li><input type="checkbox" data-persist="b-jack" data-shop data-p="10"><span class="nm">3.5mm 插头 + 插座 各 ×4</span><span class="kw">搜：3.5mm 插头 插座 DIY 焊接</span><span class="pr">8–12 元</span></li>
+          <li><input type="checkbox" data-persist="b-led" data-shop data-p="5"><span class="nm">LED 5mm 混装 1 包（插孔灯 + 时代灯）</span><span class="kw">搜：LED 发光二极管 5mm 混装</span><span class="pr">约 5 元</span></li>
+          <li><input type="checkbox" data-persist="b-res" data-shop data-p="2"><span class="nm">220Ω 电阻 1 包（LED 限流）</span><span class="kw">搜：电阻 220欧 1/4W</span><span class="pr">约 2 元</span></li>
+          <li><input type="checkbox" data-persist="b-dup" data-shop data-p="6"><span class="nm">杜邦线套装（公对公 / 母对母）</span><span class="kw">搜：杜邦线 套装</span><span class="pr">约 6 元</span></li>
+          <li><input type="checkbox" data-persist="b-term" data-shop data-p="6"><span class="nm">按压式接线端子 1 盒</span><span class="kw">搜：按压接线端子 快速</span><span class="pr">约 6 元</span></li>
+          <li><input type="checkbox" data-persist="b-bread" data-shop data-p="4"><span class="nm">面包板 400 孔（调试期用）</span><span class="kw">搜：面包板 400孔</span><span class="pr">约 4 元</span></li>
+          <li><input type="checkbox" data-persist="b-glue" data-shop data-p="18"><span class="nm">热熔胶枪 + 胶棒（家长操作）</span><span class="kw">搜：热熔胶枪 小号</span><span class="pr">15–20 元</span></li>
+          <li><input type="checkbox" data-persist="b-box" data-shop data-p="8"><span class="nm">木盒或大号纸盒（主机外壳）</span><span class="kw">搜：木盒 收纳 30x20，或用鞋盒</span><span class="pr">0–15 元</span></li>
+          <li><input type="checkbox" data-persist="b-tube" data-shop data-p="0"><span class="nm">粗纸筒 / 圆形塑料盒 ×2（听筒外壳）</span><span class="kw">保鲜膜纸筒等，家里找</span><span class="pr">0 元</span></li>
+        </ul>
+        <div class="oneclick">
+          <b>🧾 一次下单话术（复制给客服或自行搜索）：</b><br>
+          LM386 功放模块成品 ×2、驻极体麦克风模块带放大 ×2、8 欧 0.5W 喇叭 57mm ×2、大号复位按钮 ×3、有源蜂鸣器 5V ×1、4 节 5 号电池盒带开关 ×1、2 节电池盒带开关 ×1、双芯电线 10 米、3.5mm 插头插座各 ×4、5mm LED 混装 ×1 包、220 欧电阻 ×1 包、杜邦线套装、按压接线端子、面包板 400 孔、漆包线 0.4mm、钕磁铁圆片 15mm ×4、大铁钉 ×2、钓鱼线、3.5mm 单头裸线音频线 ×1。
+        </div>
+      </div>
+    </div>
+
+    <!-- 升级档 -->
+    <div class="segpage" data-segpage="t3">
+      <div class="card">
+        <h2>🚀 升级档 = 基础档 + 以下</h2>
+        <ul class="checklist" data-shoplist>
+          <li><input type="checkbox" data-persist="u-old" data-shop data-p="80"><span class="nm">复古拨号电话（摆件/二手）</span><span class="kw">搜：复古拨号电话 摆件 / 闲鱼：老电话 转盘 · 只观察不插线</span><span class="pr">40–120 元</span></li>
+          <li><input type="checkbox" data-persist="u-c" data-shop data-p="20"><span class="nm">听筒 C 套件（功放+话筒+喇叭+按键）</span><span class="kw">同基础档对应项 · 真三方选线</span><span class="pr">约 20 元</span></li>
+          <li><input type="checkbox" data-persist="u-micro" data-shop data-p="5"><span class="nm">微动开关（带柄）×6</span><span class="kw">搜：微动开关 带柄 小型 · 插孔自动亮灯</span><span class="pr">约 5 元</span></li>
+          <li><input type="checkbox" data-persist="u-isd" data-shop data-p="10"><span class="nm">ISD1820 录音模块（留言电话）</span><span class="kw">搜：ISD1820 录音模块</span><span class="pr">8–12 元</span></li>
+          <li><input type="checkbox" data-persist="u-iron" data-shop data-p="32"><span class="nm">电烙铁套装 恒温（家长用）</span><span class="kw">搜：电烙铁 套装 恒温 60W · 含焊锡松香</span><span class="pr">25–40 元</span></li>
+          <li><input type="checkbox" data-persist="u-dmm" data-shop data-p="25"><span class="nm">万用表（入门款）</span><span class="kw">搜：万用表 数字 入门 · 查通断，也是仪器启蒙</span><span class="pr">20–30 元</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="totalbar" id="totalBar">还要采购约 ¥0</div>
+  </div>
+
+  <div class="card">
+    <h2>♻️ 可替代物料（家里有就不用买）</h2>
+    <table class="tbl">
+      <tr><th>清单物料</th><th>家里替代品</th></tr>
+      <tr><td>双芯电线</td><td>旧网线（拆两对）、旧耳机线、旧 USB 线（只用其中两芯）</td></tr>
+      <tr><td>3.5mm 音频线</td><td>坏耳机剪线</td></tr>
+      <tr><td>小喇叭</td><td>坏收音机 / 旧玩具里拆</td></tr>
+      <tr><td>电池盒</td><td>旧玩具电池仓拆出</td></tr>
+      <tr><td>木盒</td><td>鞋盒、月饼盒、快递纸箱</td></tr>
+      <tr><td>驻极体话筒模块</td><td>旧耳机上的线控麦（需家长改接，升级版玩法）</td></tr>
+      <tr><td>磁铁</td><td>冰箱贴里的强磁（确认够大、孩子吞不下）</td></tr>
+    </table>
+  </div>
+
+  <div class="safety">
+    <h3>🚫 不建议买</h3>
+    <ul>
+      <li><b>电话实验套件成品</b>（一百多元的「科学罐头」类）：现象被封装，孩子看不到线，失去本课题「自己接通电路」的核心体验。家长时间极少时可买一台当补充，不当主线。</li>
+      <li><b>真实可用的插卡电话机</b>：涉及电信网，超出课题需要，且有铃流高压。</li>
+      <li><b>小磁珠 / 巴克球</b>：误吞危险，本课题用不到。</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="site">小小接线生 · 电话课题实验室 · 价格为 2026 年常见区间，仅供参考</footer>
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  var notes = {
+    t1: '极简档：完成实验 1–5（声音、纸杯电话、电磁铁、电磁听筒），本周就能下单。',
+    t2: '基础档：极简档全部 + 时光电话机（一对一对讲 + 呼叫铃 + 交换台灯）。',
+    t3: '升级档：基础档全部 + 旧电话观察 + 听筒 C 真选线 + 留言功能。'
+  };
+  function visibleTier() {
+    var on = document.querySelector('[data-segbtn].on');
+    return on ? on.getAttribute('data-segbtn') : 't1';
+  }
+  function recalc() {
+    var tier = visibleTier();
+    document.getElementById('tierNote').textContent = notes[tier];
+    var show = { t1: ['t1'], t2: ['t1', 't2'], t3: ['t1', 't2', 't3'] }[tier];
+    /* 基础档/升级档为累加展示：把极简档区块也显示出来 */
+    document.querySelectorAll('[data-segpage]').forEach(function (p) {
+      p.classList.toggle('on', show.indexOf(p.getAttribute('data-segpage')) !== -1);
+    });
+    var sum = 0, left = 0;
+    document.querySelectorAll('.segpage.on input[data-shop]').forEach(function (cb) {
+      var p = parseInt(cb.getAttribute('data-p') || '0', 10);
+      sum += p;
+      if (!cb.checked) left += p;
+    });
+    document.getElementById('totalBar').textContent =
+      left === 0 ? '🎉 物料齐了，开工！（本档参考合计 ¥' + sum + '）'
+                 : '还要采购约 ¥' + left + '（本档参考合计 ¥' + sum + '，已勾掉家里有的）';
+  }
+  window.onSegChange = recalc;
+  window.onCheckChange = recalc;
+  recalc();
+})();
+</script>
+</body>
+</html>
